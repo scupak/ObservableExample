@@ -18,7 +18,9 @@ import observableexample.dal.SomeDAO;
 public class DataObservable {
 
     private SomeDAO dao;
+
     private boolean isRunning = true;
+
     private List<DataObserver> observers;
 
     private String state;
@@ -49,6 +51,7 @@ public class DataObservable {
                 }
             }
         });
+        t.setDaemon(true); //I mark the thread as a daemon thread so it will be terminated when i exit the app.
         t.start();
     }
 
