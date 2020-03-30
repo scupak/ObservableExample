@@ -21,19 +21,16 @@ public class RandomNumberModel {
         return randomTextProperty;
     }
 
-    public void startObserving()
-    {
-        DataObserver observer = new DataObserver()
-        {
+    public void startObserving() {
+        DataObserver observer = new DataObserver() {
             @Override
             public void update() {
 
-                Platform.runLater(new Runnable()
-                {
+                Platform.runLater(new Runnable() {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         randomTextProperty.setValue(bllComponent.getState());
+                        //Do nothing
                     }
 
                 });
